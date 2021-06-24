@@ -62,6 +62,17 @@ const { odds: { team1, x: draw, team2 } } = game;
 console.log(team1, draw, team2); // 1.33 3.25 6.5
 
 //6. 
-const printGoals = function () {
-
+const printGoals = function (...players) {
+    console.log(players);
+    console.log(`${players.length} goalz were scored`);
 }
+
+// printGoals('Davies', 'Kimmich', 'Muller', 'Lewandowski');
+// printGoals('Davies', 'Kimmich');
+printGoals(...game.scored);
+
+//7. which team more likely to win based on odds 
+//team1 is less than team2 in odds, so more likely to win
+//truthy on the left of &&
+team1 < team2 && console.log('Team 1 is more likely to win'); // this one evaluates and logs
+team1 > team2 && console.log('Team 2 is more likely to win');
