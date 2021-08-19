@@ -84,3 +84,14 @@ const displayMovements = function (movements) {
 displayMovements(account1.movements);
 
 /* <div class="movements__date">3 days ago</div> */
+
+const createUserNames = function (accs) {
+    accs.forEach(function (acc) {
+        acc.username = acc.owner.toLowerCase().split(' ').map(name => name[0]).join('');
+    });
+    // return username;
+};
+
+// const user = 'Steven Thomas Williams';
+console.log(createUserNames(accounts));
+console.log(accounts); // accounts array returned with new username property in each username in small letters
