@@ -95,3 +95,11 @@ const createUserNames = function (accs) {
 // const user = 'Steven Thomas Williams';
 console.log(createUserNames(accounts));
 console.log(accounts); // accounts array returned with new username property in each username in small letters
+
+const calcDisplayBalance = function (movements) {
+    const balance = movements.reduce((acc, mov) => acc + mov, 0);
+    labelBalance.textContent = `${balance}€`;
+    return labelBalance.textContent;
+};
+
+console.log(calcDisplayBalance(account1.movements)); // 3840€
