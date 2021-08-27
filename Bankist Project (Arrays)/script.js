@@ -183,6 +183,23 @@ btnTransfer.addEventListener('click', function (e) {
     }
 });
 
+// loan is approved if deposit is > 10% of requested amount of loan
+btnLoan.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const amount = Number(inputLoanAmount.value);
+    // multiply amount by 0.1 to get 10%
+    if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+        // add movement
+        currentAccount.movements.push(amount);
+
+        // update UI
+        updateUI(currentAccount);
+    }
+    // clear input field
+    inputLoanAmount.value = '';
+});
+
 // close/delete account
 btnClose.addEventListener('click', function (e) {
     e.preventDefault();
