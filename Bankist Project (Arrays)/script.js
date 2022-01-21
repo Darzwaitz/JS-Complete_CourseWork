@@ -193,17 +193,6 @@ updateUI(currentAccount);
 containerApp.style.opacity = 100;
 // // 
 
-const now = new Date();
-const day = `${now.getDate()}`.padStart(2, 0);
-const month = `${now.getMonth() + 1}`.padStart(2,0);
-const year = now.getFullYear();
-const hour = now.getHours();
-const min = `${now.getMinutes()}`.padStart(2,0);
-labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`;
-// console.log(labelDate.textContent);
-
-//day/month/year
-
 btnLogin.addEventListener('click', function (e) {
     //prevent form submit default
     e.preventDefault();
@@ -218,6 +207,15 @@ btnLogin.addEventListener('click', function (e) {
         //Display UI & message - display only first name with split
         labelWelcome.textContent = `Welcome back ${currentAccount.owner.split(' ')[0]}`;
         containerApp.style.opacity = 100;
+
+        // Create current date and time
+        const now = new Date();
+        const day = `${now.getDate()}`.padStart(2, 0);
+        const month = `${now.getMonth() + 1}`.padStart(2,0);
+        const year = now.getFullYear();
+        const hour = now.getHours();
+        const min = `${now.getMinutes()}`.padStart(2,0);
+        labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`;
 
         // clear input fields 
         // 2 assignments here to empty string
@@ -251,6 +249,10 @@ btnTransfer.addEventListener('click', function (e) {
         currentAccount.movements.push(-amount);
         receiverAcc.movements.push(amount);
 
+        // Add transfer date
+        currentAccount.movementsDates.push(new Date().toISOString());
+        receiverAcc.movementsDates.push(new Date().toISOString());
+
         // update UI
         updateUI(currentAccount);
     }
@@ -265,6 +267,9 @@ btnLoan.addEventListener('click', function (e) {
     if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
         // add movement
         currentAccount.movements.push(amount);
+
+        // Add loan
+        currentAccount.movementsDates.push(new Date().toISOString());
 
         // update UI
         updateUI(currentAccount);
