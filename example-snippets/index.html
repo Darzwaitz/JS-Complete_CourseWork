@@ -1,98 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Data Structures and Modern Operators</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(to top left, #28b487, #7dd56f);
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Data Structures and Modern Operators</title>
-  <style>
-    body {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(to top left, #28b487, #7dd56f);
-    }
+      h1 {
+        font-family: sans-serif;
+        font-size: 50px;
+        line-height: 1.3;
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+        color: white;
+      }
 
-    h1 {
-      font-family: sans-serif;
-      font-size: 50px;
-      line-height: 1.3;
-      width: 100%;
-      padding: 30px;
-      text-align: center;
-      color: white;
-    }
+      button {
+        width: 150px;
+        height: 20px;
+        margin: 10px;
+      }
 
-    button {
-      width: 150px;
-      height: 20px;
-      margin: 10px;
-    }
+      textarea {
+        width: 300px;
+        height: 100px;
+      }
 
-    textarea {
-      width: 300px;
-      height: 100px;
-    }
+      .buy,
+      .poll {
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+        position: absolute;
+        top: 2rem;
+      }
 
-    .buy,
-    .poll {
-      font-size: 1.6rem;
-      padding: 1rem 2rem;
-      position: absolute;
-      top: 2rem;
-    }
+      .buy {
+        left: 2rem;
+      }
 
-    .buy {
-      left: 2rem;
-    }
+      .poll {
+        right: 2rem;
+      }
+    </style>
+  </head>
 
-    .poll {
-      right: 2rem;
-    }
-  </style>
-</head>
+  <body>
+    <!-- <h1>Data Structures and Modern Operators</h1> -->
 
-<body>
-  <!-- <h1>Data Structures and Modern Operators</h1> -->
+    <h1>A Closer Look at Functions</h1>
+    <button class="buy">Buy new plane 🛩</button>
+    <button class="poll">Answer poll ⁉️</button>
 
-  <h1>A Closer Look at Functions</h1>
-  <button class="buy">Buy new plane 🛩</button>
-  <button class="poll">Answer poll ⁉️</button>
-
-  <!-- <script src="destructuring-array.js"></script> -->
-  <!-- <script src="destructuring-object.js"></script> -->
-  <!-- <script src="spreadOperator.js"></script> -->
-  <!-- <script src="restPatternsParameters.js"></script> -->
-  <!-- <script src="short-circuiting-nullish-coalescing.js"></script> -->
-  <!-- <script src="for-of-loop.js"></script> -->
-  <!-- <script src="enhanced-object-literals.js"></script> -->
-  <!-- <script src="optional-chaining.js"></script> -->
-  <!-- <script src="object-keys-values-entries.js"></script> -->
-  <!-- <script src="maps-fundamentals.js"></script> -->
-  <!-- <script src="maps-iteration.js"></script> -->
-  <!-- <script src="strings-part1.js"></script> -->
-  <!-- <script src="strings-part2.js"></script> -->
-  <!-- <script src="strings-part3.js"></script> -->
-  <!-- <script src="string-methods-practice.js"></script> -->
-  <!-- <script src="function-default-parameters.js"></script> -->
-  <!-- <script src="function-value-v-reference.js"></script> -->
-  <!-- <script src="functions-accepting-callback-functions.js"></script> -->
-  <!-- <script src="functions-returning-functions.js"></script> -->
-  <!-- <script src="call-apply-bind-methods.js"></script> -->
-  <!-- <script src="immediately-invoked-functions-expressions.js"></script> -->
-  <!-- <script src="closures.js"></script> -->
-  <!-- <script src="more-closures.js"></script> -->
-  <!-- <script src="map-method.js"></script> -->
-  <!-- <script src="filter-method.js"></script> -->
-  <!-- <script src="reduce-method.js"></script> -->
-  <!-- <script src="find-method.js"></script> -->
-  <!-- <script src="some-every.js"></script> -->
-  <!-- <script src="flat-flatmap.js"></script> -->
-  <!-- <script src="sort-method.js"></script> -->
-  <!-- <script src="array-fill-method-techniques.js"></script> -->
-  <!-- <script src="array-methods-techniques.js"></script> -->
-  <script src="math-methods-rounding.js"></script>
-</body>
-
+    <!-- <script src="destructuring-array.js"></script> -->
+    <!-- <script src="destructuring-object.js"></script> -->
+    <!-- <script src="spreadOperator.js"></script> -->
+    <!-- <script src="restPatternsParameters.js"></script> -->
+    <!-- <script src="short-circuiting-nullish-coalescing.js"></script> -->
+    <!-- <script src="for-of-loop.js"></script> -->
+    <!-- <script src="enhanced-object-literals.js"></script> -->
+    <!-- <script src="optional-chaining.js"></script> -->
+    <!-- <script src="object-keys-values-entries.js"></script> -->
+    <!-- <script src="maps-fundamentals.js"></script> -->
+    <!-- <script src="maps-iteration.js"></script> -->
+    <!-- <script src="strings-part1.js"></script> -->
+    <!-- <script src="strings-part2.js"></script> -->
+    <!-- <script src="strings-part3.js"></script> -->
+    <!-- <script src="string-methods-practice.js"></script> -->
+    <!-- <script src="function-default-parameters.js"></script> -->
+    <!-- <script src="function-value-v-reference.js"></script> -->
+    <!-- <script src="functions-accepting-callback-functions.js"></script> -->
+    <!-- <script src="functions-returning-functions.js"></script> -->
+    <!-- <script src="call-apply-bind-methods.js"></script> -->
+    <!-- <script src="immediately-invoked-functions-expressions.js"></script> -->
+    <!-- <script src="closures.js"></script> -->
+    <!-- <script src="more-closures.js"></script> -->
+    <!-- <script src="map-method.js"></script> -->
+    <!-- <script src="filter-method.js"></script> -->
+    <!-- <script src="reduce-method.js"></script> -->
+    <!-- <script src="find-method.js"></script> -->
+    <!-- <script src="some-every.js"></script> -->
+    <!-- <script src="flat-flatmap.js"></script> -->
+    <!-- <script src="sort-method.js"></script> -->
+    <!-- <script src="array-fill-method-techniques.js"></script> -->
+    <!-- <script src="array-methods-techniques.js"></script> -->
+    <!-- <script src="math-methods-rounding.js"></script> -->
+    <script src="operations-with-dates.js"></script>
+  </body>
 </html>
