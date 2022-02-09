@@ -146,7 +146,7 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 
 allSections.forEach(function (section) {
   sectionObserver.observe(section);
-  // section.classList.add("section--hidden"); PUT BACk!!
+  section.classList.add("section--hidden");
 });
 
 // Lazy loading imagez
