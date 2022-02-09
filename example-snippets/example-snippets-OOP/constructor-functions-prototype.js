@@ -31,3 +31,6 @@ console.log(darz.__proto__);
 // constructor: function Person(firstName, birthYear)
 // newprop: "Test new prop"
 // <prototype>: Object { … }
+
+// Object.prototype (top of chain)
+console.log(darz.__proto__.__proto__);
