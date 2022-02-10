@@ -32,7 +32,22 @@ class PersonCl {
   get fullName() {
     return this._fullName;
   }
+
+  // static method - equiv to the following (if written outside the class)
+  //   PersonCl.yo = function () {
+  //   console.log("Yo");
+  //   console.log(this); // class PersonCl { constructor(fullName, birthYear) }
+  // };
+  // PersonCl.yo();
+  // static method
+  static yo() {
+    console.log("Yo - from static");
+    console.log(this); // class PersonCl { constructor(fullName, birthYear) }
+  }
 }
+PersonCl.yo();
+// Yo - from static
+// class PersonCl { constructor(fullName, birthYear) }
 
 const sally = new PersonCl("Sally Wen", 1996);
 // console.log(sally);
