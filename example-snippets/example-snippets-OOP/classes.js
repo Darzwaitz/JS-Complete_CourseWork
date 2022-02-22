@@ -84,38 +84,48 @@ jay.calcAge(); // 20
 
 // another class example
 class Account {
+  // Public fields - added to instancez
+  locale = navigator.language;
+
+  // Private field
+  #movements = [];
+  #pin;
+
   constructor(owner, currency, pin) {
     this.owner = owner;
     this.currency = currency;
     // protected property - underscore naming convention
-    this._pin = pin;
-    this._movements = [];
-    this.locale = navigator.language;
+    this.#pin = pin;
+    // this._movements = [];
+    // this.locale = navigator.language;
 
     // console.log("thankz..");
   }
 
   // Public interface
   getMovements() {
-    return this._movements;
+    return this.#movements;
   }
 
   deposit(val) {
-    this._movements.push(val);
+    this.#movements.push(val);
   }
 
   withdraw(val) {
     this.deposit(-val);
   }
 
-  _approveLoan(val) {
-    return true;
-  }
   requestLoan(val) {
+    // if (this.#approveLoan(val)) {
     if (this._approveLoan(val)) {
       this.deposit(val);
       console.log("Loan Approved");
     }
+  }
+
+  // #approveLoan(val) {
+  _approveLoan(val) {
+    return true;
   }
 }
 
@@ -131,3 +141,5 @@ console.log(acc1);
 console.log(acc1.pin);
 
 console.log(acc1.getMovements());
+
+// console.dir(acc1.#approveLoan()); // Private methods not yet implemented
