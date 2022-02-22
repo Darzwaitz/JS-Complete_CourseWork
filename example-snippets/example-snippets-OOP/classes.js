@@ -109,10 +109,12 @@ class Account {
 
   deposit(val) {
     this.#movements.push(val);
+    return this;
   }
 
   withdraw(val) {
     this.deposit(-val);
+    return this;
   }
 
   requestLoan(val) {
@@ -120,12 +122,17 @@ class Account {
     if (this._approveLoan(val)) {
       this.deposit(val);
       console.log("Loan Approved");
+      return this;
     }
   }
 
   // #approveLoan(val) {
   _approveLoan(val) {
     return true;
+  }
+  // static method only available on the class, not the instance
+  static helper() {
+    console.log("Helper");
   }
 }
 
@@ -141,5 +148,9 @@ console.log(acc1);
 console.log(acc1.pin);
 
 console.log(acc1.getMovements());
+console.log(Account.helper()); // Helper
 
 // console.dir(acc1.#approveLoan()); // Private methods not yet implemented
+
+// Chaining
+acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
