@@ -1,6 +1,8 @@
 // Using cloneDeep from loadash to make sure a clone object is the original object
 
-import cloneDeep from "./node_modules/lodash-es/cloneDeep.js";
+// import cloneDeep from "./node_modules/lodash-es/cloneDeep.js";
+// Parcel shortens the code here
+import cloneDeep from "lodash-es";
 
 const state = {
   cart: [
@@ -18,3 +20,8 @@ state.user.loggedIn = false;
 console.log(stateClone);
 
 console.log(stateDeepClone);
+
+// Parcel code
+if (module.hot) {
+  module.hot.accept();
+}
