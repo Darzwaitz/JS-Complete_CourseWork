@@ -2,7 +2,7 @@
 
 // import cloneDeep from "./node_modules/lodash-es/cloneDeep.js";
 // Parcel shortens the code here
-import cloneDeep from "lodash-es";
+import cloneDeep from "./node_modules/lodash-es";
 
 const state = {
   cart: [
@@ -37,4 +37,4 @@ const Darz = new Person("Darz");
 
 console.log("Darz" ?? null);
 
-import "core-js/stable";
+import "./node_modules/core-js/stable";
